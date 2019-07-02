@@ -2,6 +2,9 @@
 
 基于SpringBoot2.0 + MyBatis Plus后台脚手架 
 
+# 功能简介
+1. 集成了hutool https://hutool.cn/docs/#/  
+
 # 项目打包
 IDEA MAVEN插件进行打包  
 其实就是mvn clean package    
