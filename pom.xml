@@ -113,7 +113,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
 					<!-- 工程主入口-->
-					<mainClass>com.hjsj.projectfiling.ProjectfilingApplication</mainClass>
+					<mainClass>com.duzj.staging.StagingApplication</mainClass>
 					<!--可以把本地jar打包进来-->
 					<includeSystemScope>true</includeSystemScope>
 				</configuration>
