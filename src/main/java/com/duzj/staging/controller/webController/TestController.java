@@ -30,17 +30,20 @@ public class TestController extends BaseController{
     @WebLog(description ="测试")
     @RequestMapping("/test")
     @ResponseBody
-    public Object insert(@RequestBody String jsonString){
+    public Object test(@RequestBody String jsonString){
         Map returnMap = new HashMap(3);
         try{
             logger.info("ok");
+            //int a = 1/0; //测试异常
+            returnMap.put("code",10000);
+            returnMap.put("msg","请求成功");
         }catch (Exception e){
             e.printStackTrace();
-            logger.error("异常类:"+ Arrays.toString(e.getStackTrace())+",异常原因:"+e.getMessage());
+            logger.error("异常类:"+ e.getStackTrace()[0].toString()+",异常原因:"+e.getMessage());
             returnMap.put("code",30000);
             returnMap.put("msg","系统异常");
         }finally {
-
+            //关闭流等操作
         }
         return returnMap;
     }
