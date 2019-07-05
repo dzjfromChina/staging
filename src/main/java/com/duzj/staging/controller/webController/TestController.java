@@ -3,6 +3,7 @@ package com.duzj.staging.controller.webController;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.duzj.staging.base.annotation.WebLog;
+import com.duzj.staging.base.cache.DemoCache;
 import com.duzj.staging.controller.BaseController;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -35,6 +36,11 @@ public class TestController extends BaseController{
         try{
             logger.info("ok");
             //int a = 1/0; //测试异常
+
+            //测试缓存
+            //
+            String testCache = DemoCache.get("testCache").toString();
+            System.out.println("testCache:"+testCache);
             returnMap.put("code",10000);
             returnMap.put("msg","请求成功");
         }catch (Exception e){

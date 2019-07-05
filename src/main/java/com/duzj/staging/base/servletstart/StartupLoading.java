@@ -1,6 +1,7 @@
 package com.duzj.staging.base.servletstart;
 
 
+import com.duzj.staging.base.cache.DemoCache;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.springframework.boot.CommandLineRunner;
@@ -18,6 +19,7 @@ public class StartupLoading implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         logger.info("====================开始加载缓存====================");
+        DemoCache.put("testCache","我是缓存");
         logger.info("====================结束加载缓存====================");
     }
 
