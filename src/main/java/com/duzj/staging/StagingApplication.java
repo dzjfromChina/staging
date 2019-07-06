@@ -27,15 +27,15 @@ public class StagingApplication {
 	 *
 	 * @return
 	 */
- /*   @Bean
-    public HttpMessageConverters fastJsonHttpMessageConverters() {
-        FastJsonHttpMessageConverter converter = new FastJsonHttpMessageConverter();
-        FastJsonConfig fastJsonConfig = new FastJsonConfig();
-        fastJsonConfig.setFeatures(Feature.OrderedField);
-        //SerializerFeature.config(SerializerFeature.WRITE_MAP_NULL_FEATURES,);
-        fastJsonConfig.setSerializerFeatures(SerializerFeature.PrettyFormat);
-        converter.setFastJsonConfig(fastJsonConfig);
-        return new HttpMessageConverters(converter);
-    }*/
+	 /*   @Bean
+		public HttpMessageConverters fastJsonHttpMessageConverters() {
+			FastJsonHttpMessageConverter converter = new FastJsonHttpMessageConverter();
+			FastJsonConfig fastJsonConfig = new FastJsonConfig();
+			fastJsonConfig.setFeatures(Feature.OrderedField);
+			//SerializerFeature.config(SerializerFeature.WRITE_MAP_NULL_FEATURES,);
+			fastJsonConfig.setSerializerFeatures(SerializerFeature.PrettyFormat);
+			converter.setFastJsonConfig(fastJsonConfig);
+			return new HttpMessageConverters(converter);
+		}*/
 
 }
