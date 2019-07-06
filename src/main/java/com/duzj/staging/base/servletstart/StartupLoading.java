@@ -4,7 +4,9 @@ package com.duzj.staging.base.servletstart;
 import com.duzj.staging.base.cache.DemoCache;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Component;
 
 
@@ -15,6 +17,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class StartupLoading implements CommandLineRunner {
     private final Logger logger = LogManager.getLogger(this.getClass());
+
+
 
     @Override
     public void run(String... args) throws Exception {

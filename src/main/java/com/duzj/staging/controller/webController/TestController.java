@@ -5,6 +5,10 @@ import com.alibaba.fastjson.JSONObject;
 import com.duzj.staging.base.annotation.WebLog;
 import com.duzj.staging.base.cache.DemoCache;
 import com.duzj.staging.controller.BaseController;
+import com.duzj.staging.pojo.Test;
+import com.duzj.staging.service.ITestService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,6 +27,10 @@ import java.util.Map;
 @RequestMapping("/testController")
 public class TestController extends BaseController{
 
+    @Autowired
+    private StringRedisTemplate redisTemplate;
+    @Autowired
+    private ITestService testService;
     /**
      * 测试插入
      * @param jsonString
@@ -38,9 +46,19 @@ public class TestController extends BaseController{
             //int a = 1/0; //测试异常
 
             //测试缓存
-            //
             String testCache = DemoCache.get("testCache").toString();
             System.out.println("testCache:"+testCache);
+            /**
+             *  redis
+             *  1. 先使用mybatis plus从test表读取数据
+             *  2.插入redis
+             *  3.从redis获取
+             */
+            for (Test test : testService.list()) {
+                redisTemplate.opsForValue().set(test.getName(),test.getAge().toString());
+            }
+            System.out.println(redisTemplate.opsForValue().get("张飞"));
+
             returnMap.put("code",10000);
             returnMap.put("msg","请求成功");
         }catch (Exception e){
