@@ -2,6 +2,11 @@
 
 基于SpringBoot2.0 + MyBatis Plus后台脚手架 
 
+# 项目启动
+1. IDEA通过github插件下载到本地  
+2. 本地新建数据库test 更改yml里面本地数据库的账户密码  
+3. 导入sql文件夹下面的表以及数据  
+
 # 功能简介
 1. 集成了hutool https://hutool.cn/docs/#/ 
 2. 新增JAVA缓存  
