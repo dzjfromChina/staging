@@ -21,7 +21,7 @@ public class DemoScheduler implements InitializingBean {
      *
      * 如果想要项目启动就能执行这个方法 需要implements InitializingBean
      */
-    @Scheduled(fixedRate = 2000)
+    //@Scheduled(fixedRate = 2000)
     public void testTasks() {
         System.out.println("定时任务执行时间：" + DateUtil.now());
     }
