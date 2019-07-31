@@ -24,11 +24,15 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
     @ResponseStatus
     public ResponseBean exceptionHandler(Exception e) {
         //e.getStackTrace();
-        //e.printStackTrace();
+        e.printStackTrace();
+        //数组长度为 1
+        StackTraceElement s= e.getStackTrace()[0];
         Class<? extends Exception> aClass = e.getClass();
         System.out.println(aClass.getMethods());
-        logger.error("异常类型:"+aClass.getTypeName());
-        logger.error("异常原因:"+e.getMessage());
+        logger.error("异常文件:"+s.getFileName());
+        logger.error("异常类:"+s.getClassName());
+        logger.error("异常方法:"+s.getMethodName());
+        logger.error("报错的message:"+e.getMessage());
         ResponseBean rb = new ResponseBean();
         rb.setCode(30000);
         rb.setMsg(e.getMessage());
