@@ -89,6 +89,8 @@ public class TestController extends BaseController {
         System.out.println(jsonString);
         TestInInset parameter = jsonString.getParameter();
         System.out.println(parameter);
+        Test du1 = Test.builder().age(10).name("du").build();
+        Test du2 = Test.builder().age(10).build();
         return rb;
     }
 
