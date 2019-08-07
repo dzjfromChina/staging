@@ -9,7 +9,7 @@ import lombok.*;
  */
 @Data
 @ToString
-@AllArgsConstructor
+@AllArgsConstructor(access = AccessLevel.PRIVATE)
 @NoArgsConstructor
 @Builder
 public class Test extends BaseBean {
